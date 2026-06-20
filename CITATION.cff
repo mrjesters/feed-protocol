@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use FEED, please cite it."
+title: "FEED — Format for Enforced Evidence-based Digestion"
+abstract: >-
+  FEED is a self-bootstrapping, AI-to-AI document protocol that makes downstream
+  LLMs ground their answers in cited evidence — and lets you mechanically verify
+  that they did. It requires no install, plugin, or prior knowledge of FEED on
+  either the authoring or the reading side.
+type: software
+authors:
+  - given-names: Aniku
+    family-names: Gul
+    name-suffix: "IEng, MIET, IMechE, VCAT II, CAA"
+version: "0.2.0"
+date-released: "2026-06-20"
+license: MIT
+repository-code: "https://github.com/mrjesters/feed-protocol"
+keywords:
+  - llm
+  - rag
+  - grounding
+  - protocol
+  - citations
