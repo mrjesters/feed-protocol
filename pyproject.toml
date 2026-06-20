@@ -30,8 +30,8 @@ dev = ["pytest>=7", "anthropic>=0.40"]
 feed = "feed.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/mrjesters/feed-protocol"
-Spec = "https://github.com/mrjesters/feed-protocol/blob/main/spec/feed-spec-v0.2.md"
+Homepage = "https://github.com/LancerForge/feed-protocol"
+Spec = "https://github.com/LancerForge/feed-protocol/blob/main/spec/feed-spec-v0.2.md"
 
 [tool.setuptools.packages.find]
 include = ["feed*"]
