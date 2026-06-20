@@ -33,6 +33,10 @@ retrieval-side, controlled by the AI, not the author).
 
 ## FEED is AI-to-AI (the library never needs its own API key)
 
+> **Want an AI to make a FEED companion for a document?** Point it at this repo with
+> a one-liner — *"Using this repo, turn the attached report into a FEED companion."*
+> Everything the AI needs to author it correctly is in **[AUTHORING.md](AUTHORING.md)**.
+
 The AI **already in your loop** — the one that wrote the report, your assistant, a
 pipeline step — is what produces FEED. The library just renders, validates, and
 verifies; it never calls an LLM of its own. Authoring is self-bootstrapping, the
