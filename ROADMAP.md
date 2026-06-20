@@ -4,6 +4,12 @@ Proposals under consideration for future versions. **Nothing on this page is par
 of the ratified spec** (`spec/feed-spec-v0.2.md`) until it is moved there and the
 spec version is bumped. These are captured to show direction and invite feedback.
 
+> **Active refinement (pre-v0.3).** Before any of this is ratified or advertised, the
+> priority is making FEED's enforcement *consistent across models*. Design draft:
+> [`docs/reliability-and-answer-control.md`](docs/reliability-and-answer-control.md);
+> the gating cross-model test: [`docs/cross-model-test.md`](docs/cross-model-test.md). The
+> handshake below is being folded into that work.
+
 ---
 
 ## Proposed for v0.3 — Ingestion handshake (read-receipt)

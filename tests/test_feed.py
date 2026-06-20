@@ -137,6 +137,14 @@ def test_verify_strict_requires_citation():
     assert not report.passed
 
 
+def test_verify_strict_refusal_passes():
+    # A correct refusal is the desired strict behaviour, not a grounding failure.
+    doc = make_doc("strict")
+    report = verify("Not supported by this document.", doc)
+    assert report.passed, report
+    assert report.refused
+
+
 def test_verify_open_allows_no_citation():
     doc = make_doc("open")
     report = verify("The pump seems fine to me.", doc)

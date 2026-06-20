@@ -13,6 +13,7 @@ It is deliberately simple and dependency-free — a 20-line idea with teeth.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 
 from .constants import CITATION_RE
@@ -27,6 +28,7 @@ class VerificationReport:
     uncited_evidence: list[str] = field(default_factory=list)  # exist but never cited
     corroborated: list[str] = field(default_factory=list)      # cited & a value appears in answer
     grounding: str = "strict"
+    refused: bool = False  # answer correctly declined ("Not supported by this document")
     passed: bool = False
     reasons: list[str] = field(default_factory=list)
 
@@ -82,6 +84,12 @@ def verify(answer: str, doc: FeedDocument) -> VerificationReport:
         grounding=doc.grounding,
     )
 
+    # A correct refusal ("Not supported by this document.") is the *desired* strict
+    # behaviour, not a grounding failure — recognise it so a proper decline scores
+    # as PASS rather than FAIL.
+    refused = bool(re.search(r"not supported by this document", answer, re.IGNORECASE))
+    report.refused = refused
+
     # Decide pass/fail.
     passed = True
     if invalid:
@@ -89,16 +97,21 @@ def verify(answer: str, doc: FeedDocument) -> VerificationReport:
         report.reasons.append(
             f"answer cites {len(invalid)} evidence ID(s) that do not exist in the document"
         )
-    if doc.grounding == "strict" and not cited:
+    if doc.grounding == "strict" and not cited and not refused:
         passed = False
         report.reasons.append(
-            "grounding is strict but the answer contains no [E###] citations"
+            "grounding is strict but the answer makes claims with no [E###] citations"
         )
-    if doc.grounding == "open" and not cited:
-        report.reasons.append("no citations found (allowed in open mode)")
     report.passed = passed
     if passed and not report.reasons:
-        report.reasons.append("all citations resolve to real evidence")
+        if refused:
+            report.reasons.append(
+                "answer declined ('Not supported by this document') — correct under strict grounding"
+            )
+        elif not cited:
+            report.reasons.append("no citations found (allowed in this grounding mode)")
+        else:
+            report.reasons.append("all citations resolve to real evidence")
     return report
 
 
