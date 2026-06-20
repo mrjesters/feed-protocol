@@ -1,0 +1,7 @@
+# Core scorer needs the protocol. Provider SDKs are optional — install the ones whose
+# keys you have. (mock mode needs none of the provider SDKs.)
+feed-protocol>=0.2.1
+python-dotenv>=1.0
+openai>=1.30          # for --provider openai and for refine.py's proposer
+anthropic>=0.40       # for --provider anthropic
+google-genai>=0.3     # for --provider gemini

@@ -7,3 +7,9 @@ dist/
 .venv/
 venv/
 .env
+
+# eval harness
+eval/.env
+eval/venv/
+eval/results/*.json
+eval/results/*.md
