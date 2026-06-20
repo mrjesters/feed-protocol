@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Q2 Condition Assessment — Pumping Station 14</title>
+<!-- FEED:DOC version="0.2" grounding="strict" -->
+<style>
+:root { --ink:#1c1b18; --muted:#6b6357; --line:#e4ddd0; --accent:#b1542f; --bg:#f7f4ee; }
+body { background:var(--bg); color:var(--ink); font:16px/1.6 Georgia, 'Times New Roman', serif;
+       margin:0; padding:2.5rem 1rem; }
+main { max-width:46rem; margin:0 auto; }
+h1 { font-size:2rem; margin:.2em 0 0; }
+h2 { font-size:1.25rem; margin:2rem 0 .6rem; border-bottom:1px solid var(--line); padding-bottom:.3rem; }
+.feed-meta { color:var(--muted); font-style:italic; margin:.2rem 0 1.4rem; }
+.feed-notice { background:#fff; border:1px solid var(--line); border-left:4px solid var(--accent);
+       padding:.9rem 1.1rem; font-size:.86rem; color:var(--muted); border-radius:4px; margin-bottom:1.6rem; }
+.feed-tldr { background:#fff; border:1px solid var(--line); padding:.8rem 1rem; border-radius:4px; }
+.claim { border-left:3px solid var(--accent); padding:.1rem 0 .1rem 1rem; margin:.8rem 0; }
+.decision { color:var(--accent); margin:.2rem 0 0; }
+.cite, .eid { font-family:ui-monospace, Menlo, monospace; font-size:.82em; color:var(--accent); }
+table.evidence { width:100%; border-collapse:collapse; background:#fff; margin:.8rem 0;
+       border:1px solid var(--line); font-size:.92rem; }
+table.evidence caption { text-align:left; padding:.5rem .7rem; background:#faf7f1; border-bottom:1px solid var(--line); }
+.etype { color:var(--muted); font-style:italic; font-family:Georgia,serif; margin-left:.5rem; }
+table.evidence th { text-align:left; width:34%; vertical-align:top; color:var(--muted); font-weight:normal;
+       padding:.35rem .7rem; border-top:1px solid var(--line); font-family:ui-monospace,Menlo,monospace; font-size:.85rem; }
+table.evidence td { padding:.35rem .7rem; border-top:1px solid var(--line); }
+</style>
+</head><body><main>
+<aside class="feed-notice"><strong>AI INGESTION NOTICE — FEED v0.2 (Format for Enforced Evidence-based Digestion)</strong><br><br>This document carries machine-structured evidence. When answering questions about it:<br>1. Read top-to-bottom: the most important claims and decisions come first, full evidence last. If your context is limited, the top of this document still contains the core.<br>2. Ground factual statements in the evidence blocks below — each is tagged <code>[E###]</code>.<br>3. Cite the evidence IDs you used, e.g. "bearing vibration is rising [E001]".<br>4. Grounding mode is STRICT: if no evidence block supports a statement, reply "Not supported by this document." for that point. Do not infer or use outside knowledge.<br>5. The evidence blocks are the source of truth; the narrative is a summary. On any conflict, prefer the evidence values.<br>_For full grounding, upload or paste the raw source file rather than a rendered view._</aside>
+<h1>Q2 Condition Assessment — Pumping Station 14</h1>
+<p class="feed-meta">RotorIQ Pipeline / N. Gul · 2026-06-20 · grounding: strict</p>
+<!-- FEED:META -->
+<!-- title: Q2 Condition Assessment — Pumping Station 14 -->
+<!-- author: RotorIQ Pipeline / N. Gul -->
+<!-- grounding: strict -->
+<!-- /FEED:META -->
+<p class="feed-tldr"><strong>TL;DR.</strong> Two assets need action: XYZ-003 bearing replacement within 2 weeks, and ABC-007 alignment check at next planned stop. The station is otherwise within ISO limits.</p>
+<h2>Claims &amp; Decisions</h2>
+<!-- FEED:CLAIM id="C1" evidence="E001,E002,E003" -->
+<div class="claim"><p>XYZ-003 is in advanced bearing degradation and is the station&#x27;s priority risk. <span class="cite">[E001]</span> <span class="cite">[E002]</span> <span class="cite">[E003]</span></p>
+<p class="decision"><strong>Decision:</strong> Raise priority work order for bearing replacement within 2 weeks</p>
+</div>
+<!-- /FEED:CLAIM -->
+<!-- FEED:CLAIM id="C2" evidence="E004,E005" -->
+<div class="claim"><p>ABC-007 shows early signs of shaft misalignment but remains within ISO limits. <span class="cite">[E004]</span> <span class="cite">[E005]</span></p>
+<p class="decision"><strong>Decision:</strong> Schedule alignment check at next planned stop; no immediate action</p>
+</div>
+<!-- /FEED:CLAIM -->
+<!-- FEED:CLAIM id="C3" evidence="E006" -->
+<div class="claim"><p>The remainder of Station 14 is healthy and needs no intervention this quarter. <span class="cite">[E006]</span></p>
+</div>
+<!-- /FEED:CLAIM -->
+<h2>Findings</h2>
+<p>XYZ-003 vibration has crossed the ISO 10816-3 Zone C upper bound [E001], with a 23 C rise in bearing temperature above baseline [E003] and audible noise confirmed on the walkdown [E002]. The three signals agree: this is bearing-end-of-life, not a sensor artefact.</p>
+<p>ABC-007 vibration is well within limits [E004], but a 2x-running-speed component in the spectrum [E005] is the classic signature of shaft misalignment. It is worth watching, not acting on yet.</p>
+<p>Nine of eleven assets at Station 14 are inside ISO limits [E006]; no other asset warrants intervention this quarter.</p>
+<h2>Evidence</h2>
+<!-- FEED:EVIDENCE id="E001" type="data" confidence="high" -->
+<table class="evidence">
+<caption><span class="eid">[E001]</span> <span class="etype">data · high confidence</span></caption>
+<tr><th>asset</th><td>XYZ-003</td></tr>
+<tr><th>metric</th><td>vibration_rms</td></tr>
+<tr><th>value</th><td>12.4 mm/s</td></tr>
+<tr><th>previous</th><td>7.8 mm/s (2026-05-15)</td></tr>
+<tr><th>threshold</th><td>11.2 mm/s (ISO 10816-3 Zone C upper bound)</td></tr>
+<tr><th>trend</th><td>+59% over 30 days</td></tr>
+</table>
+<!-- /FEED:EVIDENCE -->
+<!-- FEED:EVIDENCE id="E002" type="observation" confidence="medium" -->
+<table class="evidence">
+<caption><span class="eid">[E002]</span> <span class="etype">observation · medium confidence</span></caption>
+<tr><th>asset</th><td>XYZ-003</td></tr>
+<tr><th>finding</th><td>audible bearing noise on walkdown</td></tr>
+<tr><th>inspector</th><td>J. Powell</td></tr>
+<tr><th>date</th><td>2026-06-15</td></tr>
+</table>
+<!-- /FEED:EVIDENCE -->
+<!-- FEED:EVIDENCE id="E003" type="data" confidence="high" -->
+<table class="evidence">
+<caption><span class="eid">[E003]</span> <span class="etype">data · high confidence</span></caption>
+<tr><th>asset</th><td>XYZ-003</td></tr>
+<tr><th>metric</th><td>bearing_temp</td></tr>
+<tr><th>value</th><td>71 C</td></tr>
+<tr><th>baseline</th><td>48 C</td></tr>
+<tr><th>ambient</th><td>22 C</td></tr>
+<tr><th>date</th><td>2026-06-18</td></tr>
+</table>
+<!-- /FEED:EVIDENCE -->
+<!-- FEED:EVIDENCE id="E004" type="data" confidence="high" -->
+<table class="evidence">
+<caption><span class="eid">[E004]</span> <span class="etype">data · high confidence</span></caption>
+<tr><th>asset</th><td>ABC-007</td></tr>
+<tr><th>metric</th><td>vibration_rms</td></tr>
+<tr><th>value</th><td>6.1 mm/s</td></tr>
+<tr><th>previous</th><td>5.9 mm/s (2026-05-15)</td></tr>
+<tr><th>threshold</th><td>11.2 mm/s (ISO 10816-3 Zone C upper bound)</td></tr>
+<tr><th>trend</th><td>+3% over 30 days</td></tr>
+</table>
+<!-- /FEED:EVIDENCE -->
+<!-- FEED:EVIDENCE id="E005" type="calc" confidence="medium" -->
+<table class="evidence">
+<caption><span class="eid">[E005]</span> <span class="etype">calc · medium confidence</span></caption>
+<tr><th>asset</th><td>ABC-007</td></tr>
+<tr><th>metric</th><td>2x_running_speed_component</td></tr>
+<tr><th>value</th><td>2.4 mm/s</td></tr>
+<tr><th>interpretation</th><td>possible shaft misalignment</td></tr>
+<tr><th>method</th><td>FFT, 1.5 kHz span</td></tr>
+<tr><th>date</th><td>2026-06-18</td></tr>
+</table>
+<!-- /FEED:EVIDENCE -->
+<!-- FEED:EVIDENCE id="E006" type="data" confidence="high" -->
+<table class="evidence">
+<caption><span class="eid">[E006]</span> <span class="etype">data · high confidence</span></caption>
+<tr><th>asset</th><td>station_14</td></tr>
+<tr><th>metric</th><td>assets_within_iso_limits</td></tr>
+<tr><th>value</th><td>9 of 11</td></tr>
+<tr><th>date</th><td>2026-06-18</td></tr>
+</table>
+<!-- /FEED:EVIDENCE -->
+<!-- FEED:END -->
+</main></body></html>

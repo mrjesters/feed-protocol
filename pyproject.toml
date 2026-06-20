@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "feed-protocol"
+version = "0.2.0"
+description = "FEED — Format for Enforced Evidence-based Digestion. A self-bootstrapping document protocol that forces downstream LLMs to ground answers in cited evidence."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Aniku Gul IEng, MIET, IMechE, VCAT II, CAA" }]
+keywords = ["llm", "rag", "grounding", "documents", "protocol", "feed", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Markup",
+]
+dependencies = []
+
+[project.optional-dependencies]
+# The auto-tagger is the only part that needs an LLM. Everything else
+# (build, render, validate, verify) is pure-Python and dependency-free.
+tagger = ["anthropic>=0.40"]
+dev = ["pytest>=7", "anthropic>=0.40"]
+
+[project.scripts]
+feed = "feed.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mrjesters/feed-protocol"
+Spec = "https://github.com/mrjesters/feed-protocol/blob/main/spec/feed-spec-v0.2.md"
+
+[tool.setuptools.packages.find]
+include = ["feed*"]
