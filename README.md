@@ -160,3 +160,9 @@ Deliberately out of scope for now: PDF/DOCX embedding, a hosted validator, and a
 provider-native "FEED mode".
 
 MIT licensed. Spec and tooling are open — adoption is the point.
+
+## Acknowledgements
+
+FEED — its specification and reference implementation — was created by
+**Aniku Gul**, with assistance from **Claude (Anthropic)** during design and
+implementation.
