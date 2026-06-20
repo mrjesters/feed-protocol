@@ -52,7 +52,7 @@ from feed import AUTHORING_PROMPT, FEED_JSON_SCHEMA, build
 # 1. Hand AUTHORING_PROMPT + FEED_JSON_SCHEMA to whatever AI is already in your loop.
 #    It returns structured JSON (no FEED tooling needed on the AI's side).
 # 2. Render that JSON into a validated FEED document — pure Python, no API key:
-doc = build(ai_json, grounding="strict", author="N. Gul")
+doc = build(ai_json, grounding="strict", author="Reliability Engineering")
 doc.write("report.md")
 ```
 

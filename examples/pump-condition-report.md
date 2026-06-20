@@ -14,7 +14,7 @@
 
 <!-- FEED:META -->
 title: Q2 Condition Assessment — Pumping Station 14
-author: RotorIQ Pipeline / N. Gul
+author: Reliability Engineering
 created: 2026-06-20
 grounding: strict
 summary: Two assets need action: XYZ-003 bearing replacement within 2 weeks, and ABC-007 alignment check at next planned stop. The station is otherwise within ISO limits.

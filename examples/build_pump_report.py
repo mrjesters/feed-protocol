@@ -18,7 +18,7 @@ from feed import FeedDocument  # noqa: E402
 def build() -> FeedDocument:
     doc = FeedDocument(
         title="Q2 Condition Assessment — Pumping Station 14",
-        author="RotorIQ Pipeline / N. Gul",
+        author="Reliability Engineering",
         grounding="strict",
         created="2026-06-20",
         summary=(

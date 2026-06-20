@@ -9,7 +9,7 @@ from feed import FeedDocument, validate, verify
 def make_doc(grounding="strict"):
     doc = FeedDocument(
         title="Q2 Pump Health Assessment",
-        author="RotorIQ / N. Gul",
+        author="Reliability Engineering",
         grounding=grounding,
         created="2026-06-20",
         summary="XYZ-003 needs bearing replacement within 2 weeks.",
