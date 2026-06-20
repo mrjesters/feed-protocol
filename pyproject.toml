@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "feed-protocol"
-version = "0.2.0"
+version = "0.2.1"
 description = "FEED — Format for Enforced Evidence-based Digestion. A self-bootstrapping document protocol that forces downstream LLMs to ground answers in cited evidence."
 readme = "README.md"
 requires-python = ">=3.10"

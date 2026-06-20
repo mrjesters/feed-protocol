@@ -128,9 +128,16 @@ feed tag draft.md --grounding strict -o report.md  # OPTIONAL: auto-tag via Clau
 ## Install
 
 ```bash
-pip install -e .            # library + CLI, zero dependencies
-pip install -e ".[tagger]"  # adds the auto-tagger (needs anthropic + ANTHROPIC_API_KEY)
+pip install feed-protocol          # library + CLI, zero dependencies
+
+pip install -e .                   # or from a clone, for development
+pip install "feed-protocol[tagger]"  # adds the optional Claude auto-tagger
 ```
+
+> **The library is optional.** FEED is a *format* — you can hand-author a FEED
+> document in any text editor, and any AI reads it with no tooling. The library
+> and CLI exist to make authoring and, above all, **verifying** convenient (e.g.
+> `feed verify` in CI). You never need to install anything to *use* FEED.
 
 The core — authoring kit, build, render, validate, verify — is **pure Python with
 no dependencies and never calls an LLM**. Only the optional `tag` convenience

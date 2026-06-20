@@ -20,7 +20,9 @@ from .document import Claim, Evidence, FeedDocument
 from .validate import ValidationReport, validate
 from .verify import VerificationReport, verify
 
-__version__ = VERSION
+# Package version. The FEED *protocol* version is `VERSION` ("0.2") and is the
+# one embedded in documents; this package version moves independently.
+__version__ = "0.2.1"
 
 __all__ = [
     "FeedDocument",
